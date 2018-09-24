@@ -1,0 +1,26 @@
+<div class= "container">
+  <form action="/WordCounter/Counter" method="Post">
+    <div class="form-group">
+      <label for="new-word">Enter a word.</label>
+      <input class="form-control" id="new-word" name="new-word" type="text">
+      <input type="hidden" name="entered-sentence" value="@Model.GetUserSentence()">
+    </div>
+    <br>
+    <button id="create-word" type="submit" class="btn btn-primary btn-lg">Click to continue</button>
+  </form>
+</div>
+
+
+<!-- <h1>Let's count your word</h1>
+<form action = "/words" method="post">
+<br>
+<label for ="new-sentence">Enter a sentence.</label>
+<input id ="new-sentence" name="new-sentence" type="text">
+<br>
+<label for ="new-word">Choose a word you want counted?</label>
+<input id ="new-word" name="new-word" type="text">
+<br>
+<button type="submit">Submit</button>
+<br>
+</form>
+<a href="/">Home</a> -->

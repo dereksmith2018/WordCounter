@@ -1,0 +1,11 @@
+<h1>Word Counter</h1>
+<p>The word you choose @Model.GetUserWord() appears " @Model.CountedWord() " times.</p>
+<br>
+<form class="pull-left" action="/" method="Get">
+  <button type="submit" class="btn btn-primary btn-lg">Home</button>
+</form>
+<br>
+<form action="/WordCounter/CreateWord" method="Post">
+  <input type="hidden" name="new-sentence" value="@Model.GetUserSentence()">
+  <button type="submit" class="btn btn-warning btn-lg">Choose a Word.</button>
+</form>
