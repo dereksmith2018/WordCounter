@@ -7,13 +7,13 @@ namespace WordCounter.Controllers
 {
     public class WordCounterController : Controller
     {
-        [HttpGet("/WordCounter")]
-        public ActionResult Index()
+        [HttpGet("/WordCounter/CreateSentence")]
+        public ActionResult CreateSentence()
         {
             return View();
         }
-        [HttpPost("/WordCounter/New")]
-        public ActionResult UserInputWord()
+        [HttpPost("/WordCounter/CreateWord")]
+        public ActionResult CreateWord()
         {
             RepeatCounter newCounter = new RepeatCounter();
             
@@ -32,15 +32,7 @@ namespace WordCounter.Controllers
 
             return View("Counter", newCounter);
         }
-        // [HttpPost("/words")]
-        // public ActionResult CreateCount()
-        // {
-        //     RepeatCounter userInput = new RepeatCounter(Request.Form["new-word"], Request.Form["new-sentence"]);
-        //     userInput.CountWord();
-        //     userInput.Save();
-        //     List<RepeatCounter> allItems = RepeatCounter.GetAll();
-        //     return View("Index", allItems);
-        // }
+        
     }
 
 }
