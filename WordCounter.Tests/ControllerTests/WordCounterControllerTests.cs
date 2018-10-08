@@ -16,7 +16,7 @@ namespace WordCounter.Tests
             WordCounterController controller = new WordCounterController();
 
             //Act
-            ActionResult indexView = controller.Index();
+            ActionResult indexView = controller.CreateSentence();
 
             //Assert
             Assert.IsInstanceOfType(indexView, typeof(ViewResult));
