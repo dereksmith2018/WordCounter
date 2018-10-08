@@ -11,6 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WoedCounter\WordCounter.csproj" />
+    <ProjectReference Include="..\WordCounter\WordCounter.csproj" />
   </ItemGroup>
 </Project>

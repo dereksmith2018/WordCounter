@@ -34,7 +34,7 @@ namespace WordCounter.Models
     }
     public string[] MakeSentenceArray()
     {
-       string[] sentence = _userSentence.Split(' ');
+       var sentence = _userSentence.Split(' ');
        return sentence;
     }
     // public static List<RepeatCounter> GetAll()
@@ -55,6 +55,8 @@ namespace WordCounter.Models
       }
       return _count;
     }
+   }
+}  
     //   _count = 0;
     // string[] sentence = this.MakeSentenceArray();
     // foreach(string word in sentence)
@@ -64,8 +66,7 @@ namespace WordCounter.Models
     //       }
     //
     // }
-  }
-}
+ 
 /* string[] sentence = usersentence.Split(" ");
  * int count = 0;
 

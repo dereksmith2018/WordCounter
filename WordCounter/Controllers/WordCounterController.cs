@@ -7,16 +7,18 @@ namespace WordCounter.Controllers
 {
     public class WordCounterController : Controller
     {
-        [HttpGet("/WordCounter/CreateSentence")]
-        public ActionResult CreateSentence()
+        [HttpGet("/WordCounter")]
+        public ActionResult Index()
         {
             return View();
         }
-        [HttpPost("/WordCounter/CreateWord")]
-        public ActionResult CreateWord()
+        [HttpPost("/WordCounter/New")]
+        public ActionResult UserInputWord()
         {
             RepeatCounter newCounter = new RepeatCounter();
+            
             newCounter.SetUserSentence(Request.Form["new-sentence"]);
+            
             return View(newCounter);
 
         }
@@ -24,8 +26,10 @@ namespace WordCounter.Controllers
         public ActionResult CreateCount()
         {
             RepeatCounter newCounter = new RepeatCounter();
+            
             newCounter.SetUserSentence(Request.Form["entered-sentence"]);
             newCounter.SetUserWord(Request.Form["new-word"]);
+
             return View("Counter", newCounter);
         }
         // [HttpPost("/words")]

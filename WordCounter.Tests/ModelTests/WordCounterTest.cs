@@ -1,34 +1,43 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WordCounter.Models; 
+using System.Collections.Generic;
+using WordCounter.Models;
+using System;
 
 namespace WordCounter.Tests
 {
-    [TestClass]
-    public class WordCounterTests
+  [TestClass]
+  public class RepeatCounterTest
+  {
+     [TestMethod]
+    public void SetString_ReturnsString_True()
     {
-        [TestMethod]
-        public void IsValidInput_SentenceLongerThanWord_False() 
-        {
-            string word = "hello to you";
-            string sentence = "hello";
+      //Arrange
+      string inputString = "derek everyone";
+      RepeatCounter newCounter = new RepeatCounter();
 
-            bool testBool = Counter.IsValidInput(word, sentence);
-            
-            Assert.AreEqual(testBool, false);
-        }
+      //Act
+      newCounter.SetUserSentence(inputString);
+      string resultString = newCounter.GetUserSentence();
 
-        [TestMethod]
-        public void ReturnCounter_NumberOfOccurencesOfWord_True()
-        {
-            string word = "derek";
-            string sentence = "derek drerk derek";
-
-            Counter testCounter = new Counter(word, sentence);
-            int testInt = testCounter.ReturnCounter();
-
-            Assert.AreEqual(testInt, 2);
-        }
+      //Assert
+      Assert.AreEqual(inputString, resultString);
     }
+    [TestMethod]
+    public void HowManyMatches_DoesWordMatchString_True()
+    {
+      //Arrange
+      string inputString = "I really dont like the documentaion on the last class";
+      string inputWord = "last";
+      RepeatCounter newCounter = new RepeatCounter();
+
+      //Act
+      newCounter.SetUserSentence(inputString);
+      newCounter.SetUserWord(inputWord);
+      int wordMatches = newCounter.CountedWord();
+
+      //Assert
+      Assert.AreEqual(1, wordMatches);
+    }
+    
+  }
 }
