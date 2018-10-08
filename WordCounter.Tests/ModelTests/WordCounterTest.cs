@@ -13,7 +13,9 @@ namespace WordCounter.Tests
         {
             string word = "hello to you";
             string sentence = "hello";
+
             bool testBool = Counter.IsValidInput(word, sentence);
+            
             Assert.AreEqual(testBool, false);
         }
 
@@ -22,8 +24,10 @@ namespace WordCounter.Tests
         {
             string word = "derek";
             string sentence = "derek drerk derek";
+
             Counter testCounter = new Counter(word, sentence);
             int testInt = testCounter.ReturnCounter();
+
             Assert.AreEqual(testInt, 2);
         }
     }

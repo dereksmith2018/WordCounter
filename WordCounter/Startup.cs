@@ -1,4 +1,3 @@
-using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,8 +25,7 @@ namespace WordCounter
 
         public void Configure(IApplicationBuilder app)
         {
-        
-
+            app.UseDeveloperExceptionPage();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -36,8 +34,9 @@ namespace WordCounter
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Welcome!");
+                await context.Response.WriteAsync("Hello World!");
             });
+            app.UseDeveloperExceptionPage();
         }
     }
 }
